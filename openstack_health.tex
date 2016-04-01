@@ -1,0 +1,137 @@
+\documentclass[aspectratio=169,11pt,hyperref={colorlinks=true}]{beamer}
+\usetheme{boxes}
+\setbeamertemplate{navigation symbols}{}
+\definecolor{openstack}{RGB}{149,0,4}
+\setbeamercolor{titlelike}{fg=openstack}
+\setbeamercolor{structure}{fg=openstack}
+\hypersetup{colorlinks,urlcolor=openstack}
+\setbeamertemplate{footline}[frame number]
+% Inserting graphics
+\usepackage{graphicx}
+% Side-by-side figures, etc
+\usepackage{subfigure}
+% Code snippits
+\usepackage{listings}
+% Color stuff
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{tikz}
+\newcommand\RBox[1]{%
+  \tikz\node[draw,rounded corners,align=center,] {#1};%
+}
+\usepackage{hyperref}
+%\usecolortheme{buzz}
+%\usecolortheme{wolverine}
+%\usetheme{Boadilla}
+\usepackage[T1]{fontenc}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{%
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{openstack},  % comment style
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+%  otherkeywords={*,...},           % if you want to add more keywords to the set
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stringstyle=\color{openstack},   % string literal style
+}
+
+\setbeamerfont{caption}{series=\normalfont,size=\fontsize{6}{8}}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\floatsep}{0pt}
+
+\author[Matthew Treinish]{%
+    \texorpdfstring{%
+        \centering
+        Matthew Treinish\\
+        \href{mailto:mtreinish@kortar.org}{mtreinish@kortar.org}\\
+        \texttt{mtreinish on Freenode}
+   }
+   {Matthew Treinish}
+}
+\date{April 25, 2015}
+
+\title[OpenStack-Health dashboard and Dealing with Data from the Gate
+\hspace{2em}\insertframenumber/\inserttotalframenumber]{OpenStack-Health dashboard and Dealing with Data from the Gate}
+
+\begin{document}
+
+{%
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth,height=\paperheight]{background_title.png}}
+\setbeamertemplate{footline}{}
+\begin{frame}[noframenumbering]
+    \setbeamercolor{titlelike}{fg=white}
+    \setbeamercolor{structure}{fg=white}
+    \setbeamercolor{normal text}{fg=white}
+    \hypersetup{colorlinks,urlcolor=white}
+    \setbeamercolor{author}{fg=white}
+    \setbeamercolor{date}{fg=white}
+    \setbeamercolor{background}{bg=openstack}
+    \titlepage{}
+    \centering
+    \href{https://github.com/mtreinish/openstack-health-presentation}{https://github.com/mtreinish/openstack-health-presentation}
+\end{frame}
+}
+
+\section{The Gate and Scale}
+\begin{frame}
+    \frametitle{The OpenStack Gate}
+\end{frame}
+
+\begin{frame}
+\frametitle{The Size of the Gate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Existing Data Sources}
+\end{frame}
+
+\section{What is OpenStack-Health}
+\begin{frame}
+    \frametitle{What is OpenStack-Health}
+\end{frame}
+
+\section{How it Works}
+\begin{frame}
+    \frametitle{OpenStack-Health Architecture}
+\end{frame}
+
+\section{Conclusion}
+
+\subsection{Next Steps}
+\begin{frame}
+    \frametitle{Next Steps}
+\end{frame}
+
+\subsection{More Information}
+\begin{frame}
+\frametitle{Where to get more information}
+    \begin{itemize}
+        \item openstack-dev ML\: \href{mailto:openstack-dev@lists.openstack.org}{openstack-dev@lists.openstack.org}
+        \item \#openstack-qa on Freenode
+        \item \href{http://git.openstack.org/cgit/openstack/openstack-health/}{http://git.openstack.org/cgit/openstack/openstack-health/}
+        \item \href{http://git.openstack.org/cgit/openstack-infra/subunit2sql}{http://git.openstack.org/cgit/openstack-infra/subunit2sql}
+
+    \end{itemize}
+\end{frame}
+
+\section{Questions}
+\begin{frame}
+\frametitle{Questions?}
+\end{frame}
+
+\end{document}
