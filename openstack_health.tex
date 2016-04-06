@@ -96,8 +96,17 @@
 \frametitle{The Size of the Gate}
 \end{frame}
 
+\subsection{Existing Data Sources}
 \begin{frame}
     \frametitle{Existing Data Sources}
+    \begin{itemize}
+        \item logstash
+        \item subunit2sql
+        \item graphite and grafana
+        \item elastic-recheck
+        \item log server
+        \item
+    \end{itemize}
 \end{frame}
 
 \section{What is OpenStack-Health}
@@ -108,9 +117,31 @@
 \section{How it Works}
 \begin{frame}
     \frametitle{OpenStack-Health Architecture}
+    \includegraphics[width=.8\textwidth]{openstack-health-arch.png}
+\end{frame}
+
+\begin{frame}
+    \frametitle{API Server}
+\end{frame}
+
+\begin{frame}
+    \frametitle{subunit2sql}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Frontend}
 \end{frame}
 
 \section{Conclusion}
+
+\begin{frame}
+    \frametitle{Current Limitations}
+    \begin{itemize}
+        \item Only data from gate and periodic queues
+        \item Only catches failures without subunit data (or that occur before or after subunit generation)
+        \item 
+    \end{itemize}
+\end{frame}
 
 \subsection{Next Steps}
 \begin{frame}
