@@ -94,6 +94,10 @@
 
 \begin{frame}
 \frametitle{The Size of the Gate}
+    \begin{itemize}
+        \item ~12,000 jobs run in check and gate daily
+        \item 
+    \end{itemize}
 \end{frame}
 
 \subsection{Existing Data Sources}
@@ -105,7 +109,7 @@
         \item graphite and grafana
         \item elastic-recheck
         \item log server
-        \item
+        \item 
     \end{itemize}
 \end{frame}
 
@@ -117,19 +121,47 @@
 \section{How it Works}
 \begin{frame}
     \frametitle{OpenStack-Health Architecture}
-    \includegraphics[width=.8\textwidth]{openstack-health-arch.png}
+    \begin{center}
+        \includegraphics[height=.8\textheight]{openstack-health-arch.png}
+    \end{center}
 \end{frame}
 
 \begin{frame}
     \frametitle{API Server}
+    \begin{itemize}
+        \item Wraps subunit2sql DB API using flask
+        \item 
+        \item Runs at \href{http://health.openstack.org}{http://health.openstack.org}
+        \item Continously Deployed on every commit
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{subunit2sql}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{subunit2sql Data Collection}
+    \begin{center}
+        \includegraphics[width=.7\textwidth]{subunit2sql-collection.png}
+    \end{center}
 \end{frame}
 
 \begin{frame}
     \frametitle{Frontend}
+    \begin{itemize}
+        \item Built using AngularJS and NVD3
+        \item Calls API server for data and renders in browser
+        \item
+        \item Continously Deployed on Every Commit
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+
 \end{frame}
 
 \section{Conclusion}
@@ -146,6 +178,10 @@
 \subsection{Next Steps}
 \begin{frame}
     \frametitle{Next Steps}
+    \begin{itemize}
+        \item Include other data sources
+        \item Use zuul for
+    \end{itemize}
 \end{frame}
 
 \subsection{More Information}
