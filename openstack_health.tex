@@ -90,26 +90,50 @@
 \section{The Gate and Scale}
 \begin{frame}
     \frametitle{The OpenStack Gate}
+	\begin{center}
+		\includegraphics[width=.65\textwidth]{code_review.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{What Happens when you push a change?}
+\begin{center}
+	\includegraphics[width=.7\textwidth]{jobs.png}
+\end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{The Size of the Gate}
-    \begin{itemize}
-        \item ~12,000 jobs run in check and gate daily
-        \item 
-    \end{itemize}
+    \begin{columns}[T]
+        \begin{column}{.48\textwidth}
+			One Proposed Change Generates:
+			\begin{itemize}
+				\item 5-25 Devstacks
+				\item ~10,000 integration tests (roughly 1.5k per devstack)
+				\item ~1000 2nd level guests brought up in devstack
+                \item ~1 GB of logs uncompressed for each tempest run
+			\end{itemize}
+			In aggregate:
+            \begin{itemize}
+                \item ~12,500 jobs run in check and gate daily
+                \item
+            \end{itemize}
+        \end{column}
+        \begin{column}{.48\textwidth}
+            TODO: A pretty graph
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \subsection{Existing Data Sources}
 \begin{frame}
     \frametitle{Existing Data Sources}
     \begin{itemize}
-        \item logstash
-        \item subunit2sql
+        \item Log Server: \href{http://logs.openstack.org/}{http://logs.openstack.org/}
+        \item elasticsearch, logstash, and kibana
         \item graphite and grafana
         \item elastic-recheck
-        \item log server
-        \item 
+        \item subunit2sql
     \end{itemize}
 \end{frame}
 
@@ -130,9 +154,9 @@
     \frametitle{API Server}
     \begin{itemize}
         \item Wraps subunit2sql DB API using flask
-        \item 
         \item Runs at \href{http://health.openstack.org}{http://health.openstack.org}
         \item Continously Deployed on every commit
+		\item Not intended for external consumption (Read as: it will change on you)
     \end{itemize}
 \end{frame}
 
@@ -161,7 +185,7 @@
 \end{frame}
 
 \begin{frame}
-
+	\frametitle{Using OpenStack Health}
 \end{frame}
 
 \section{Conclusion}
@@ -179,8 +203,13 @@
 \begin{frame}
     \frametitle{Next Steps}
     \begin{itemize}
-        \item Include other data sources
-        \item Use zuul for
+        \item Include other data sources:
+            \begin{itemize}
+                \item Use zuul as source for run/job level data
+                \item Integrate elastic-recheck data for run\_failures
+             \end{itemize}
+        \item Include data from check and experimental queues
+        \item
     \end{itemize}
 \end{frame}
 
