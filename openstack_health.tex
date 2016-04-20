@@ -106,21 +106,24 @@
 \frametitle{The Size of the Gate}
     \begin{columns}[T]
         \begin{column}{.48\textwidth}
-			One Proposed Change Generates:
+            \textbf{One Proposed Change Generates:}
 			\begin{itemize}
 				\item 5-25 Devstacks
-				\item ~10,000 integration tests (roughly 1.5k per devstack)
-				\item ~1000 2nd level guests brought up in devstack
-                \item ~1 GB of logs uncompressed for each tempest run
+				\item \textasciitilde10,000 integration tests (roughly 1.5k per devstack)
+				\item \textasciitilde180 2nd level guests brought up in devstack
+                \item \textasciitilde1 GB of logs uncompressed for each tempest run
 			\end{itemize}
-			In aggregate:
+            \textbf{In aggregate:}
             \begin{itemize}
-                \item ~12,500 jobs run in check and gate daily
-                \item
+                \item \textasciitilde12,500 jobs run in check and gate daily
+                \item \textasciitilde0.01\% individual tempest test failure rate
+                \item \textasciitilde.77\% tempest run failure rate
             \end{itemize}
         \end{column}
         \begin{column}{.48\textwidth}
-            TODO: A pretty graph
+            \centering
+            \textbf{Number of Tempest Tests per Day in the Gate Queue:}
+            \includegraphics[width=1.22\textwidth]{tempest-gate-count.png}
         \end{column}
     \end{columns}
 \end{frame}
