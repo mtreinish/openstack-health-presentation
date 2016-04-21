@@ -103,7 +103,9 @@
 \end{frame}
 
 \begin{frame}
-TODO add zuul status image
+\begin{center}
+    \includegraphics[width=.8\textwidth]{ZuulStatus.png}
+\end{center}
 \end{frame}
 
 \begin{frame}
@@ -114,7 +116,8 @@ TODO add zuul status image
 			\begin{itemize}
 				\item 5--25 Devstacks
 				\item \textasciitilde10,000 integration tests (roughly 1.5k per devstack)
-
+                \item \textasciitilde150 2nd level guests created in devstack cloud
+                \item \textasciitilde1 GB of logs uncompressed for each run
 			\end{itemize}
             \textbf{In aggregate:}
             \begin{itemize}
@@ -165,8 +168,8 @@ TODO add zuul status image
         \item Wraps subunit2sql DB API using flask
         \item Runs at \href{http://health.openstack.org}{http://health.openstack.org}
         \item Continously Deployed on every commit
-		\item Not intended for external consumption (Read as: it will change on you)
-        \item Built with the intent to incorporate additional data sources when ready
+		\item API not intended for external consumption
+        \item Built with the intent to incorporate additional data sources
     \end{itemize}
 \end{frame}
 
