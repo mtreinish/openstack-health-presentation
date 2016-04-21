@@ -103,15 +103,18 @@
 \end{frame}
 
 \begin{frame}
+TODO add zuul status image
+\end{frame}
+
+\begin{frame}
 \frametitle{The Size of the Gate}
     \begin{columns}[T]
         \begin{column}{.48\textwidth}
             \textbf{One Proposed Change Generates:}
 			\begin{itemize}
-				\item 5-25 Devstacks
+				\item 5--25 Devstacks
 				\item \textasciitilde10,000 integration tests (roughly 1.5k per devstack)
-				\item \textasciitilde180 2nd level guests brought up in devstack
-                \item \textasciitilde1 GB of logs uncompressed for each tempest run
+
 			\end{itemize}
             \textbf{In aggregate:}
             \begin{itemize}
@@ -143,6 +146,9 @@
 \section{What is OpenStack-Health}
 \begin{frame}
     \frametitle{What is OpenStack-Health}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{One-Ring-to-Rule-them-All.jpg}
+    \end{center}
 \end{frame}
 
 \section{How it Works}
@@ -160,20 +166,24 @@
         \item Runs at \href{http://health.openstack.org}{http://health.openstack.org}
         \item Continously Deployed on every commit
 		\item Not intended for external consumption (Read as: it will change on you)
+        \item Built with the intent to incorporate additional data sources when ready
     \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{subunit2sql}
     \begin{itemize}
-        \item 
+        \item A utility for storing and interacting with test results in a SQL DB
+        \item Setups a DB schema and provides a sqlalchemy based DB API for storing test results
+        \item CLI utilities for storing and retrieving results in the DB as subunit v2
+        \item A public database of everything with subunit output from gate and periodic run in OpenStack-Infra
     \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{subunit2sql Data Collection}
     \begin{center}
-        \includegraphics[width=.7\textwidth]{subunit2sql-collection.png}
+        \includegraphics[width=.73\textwidth]{subunit2sql-collection.png}
     \end{center}
 \end{frame}
 
@@ -182,13 +192,16 @@
     \begin{itemize}
         \item Built using AngularJS and NVD3
         \item Calls API server for data and renders in browser
-        \item
+        \item Located at: \href{http://status.openstack.org/openstack-health}{http://status.openstack.org/openstack-health}
         \item Continously Deployed on Every Commit
     \end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Using OpenStack Health}
+    \begin{center}
+        \includegraphics[height=.9\textheight]{HomePage.png}
+    \end{center}
 \end{frame}
 
 \section{Conclusion}
@@ -198,7 +211,8 @@
     \begin{itemize}
         \item Only data from gate and periodic queues
         \item Only catches failures without subunit data (or that occur before or after subunit generation)
-        \item 
+        \item Failures outside of what's covered by subunit aren't counted
+        \item Jobs that don't have subunit output aren't included
     \end{itemize}
 \end{frame}
 
@@ -212,7 +226,7 @@
                 \item Integrate elastic-recheck data for run\_failures
              \end{itemize}
         \item Include data from check and experimental queues
-        \item
+        \item UI improvements
     \end{itemize}
 \end{frame}
 
@@ -224,7 +238,6 @@
         \item \#openstack-qa on Freenode
         \item \href{http://git.openstack.org/cgit/openstack/openstack-health/}{http://git.openstack.org/cgit/openstack/openstack-health/}
         \item \href{http://git.openstack.org/cgit/openstack-infra/subunit2sql}{http://git.openstack.org/cgit/openstack-infra/subunit2sql}
-
     \end{itemize}
 \end{frame}
 
